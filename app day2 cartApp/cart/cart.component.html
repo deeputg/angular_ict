@@ -1,0 +1,40 @@
+
+<b>{{date}}</b>
+<table border="1">
+  <tr>
+    <th>Product name</th>
+    <th>Product Desc</th>
+    <th>Product price</th>
+    <th>Cart</th>
+  </tr>
+
+  <tr *ngFor="let pr of products;let i = index;">
+    <td>{{i+1}}</td>
+    <td>{{pr.name}}</td>
+    <td>{{pr.desc}}</td>
+    <td>{{pr.price}}</td>
+    <td><input type="button" value="add to cart" (click)=addToCart(pr.name,pr.price)></td>
+  </tr>
+
+</table>
+
+<h1>Your Cart</h1>
+<table border="1">
+    <tr>
+      <th>slno</th>
+      <th>Product name</th>
+      <th>Product price</th>
+    </tr>
+  
+    <tr *ngFor="let cr of cart;let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{cr.pname}}</td>
+      <td>{{cr.price}}</td>
+      <td><input type="button" value="remove" (click)=removeFromCart(i)></td>
+    </tr>
+    <tr>
+      <td colspan="2">Total</td>
+      <td>{{cartTotal}}</td>
+    </tr>
+  
+  </table>

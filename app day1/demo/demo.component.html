@@ -1,0 +1,53 @@
+<p>
+  Welcome to demo : {{name}}
+</p>
+<p>Age from demo :{{age}} </p>
+<p>email from demo :{{emial}} </p>
+<p>Address: {{address.Street}}  {{address.city}}</p>
+<table border="1">
+  <tr>
+    <th>Sl no</th>
+    <th>Hobbies</th>
+  </tr>
+  <tr *ngFor="let hob of hobbies;let i =index;">
+    <td>{{i+1}}</td>
+    <td>{{hob}}</td>
+  </tr>
+</table>
+
+<table border="1" id="carsTable" *ngIf="carVisibility">
+    <tr>
+      <th>Sl no</th>
+      <th>Name</th>
+      <th>Model</th>
+      <td>Delete</td>
+    </tr>
+    <tr *ngFor="let cr of cars;let i =index;">
+      <td>{{i+1}}</td>
+      <td>{{cr.name}}</td>
+      <td>{{cr.models}}</td>
+      <td><input type="button" value="x" (click)="removeThisItem(i)"></td>
+    </tr>
+  </table>
+
+  <input type="button" value="Add Car" (click)="addHobby();">
+  <input type="button" value="remove Car" (click)="removeHobby();">
+  <br>
+  <br>
+  <input type="button" value="show Car" (click)="showCars();" *ngIf="showBtn">
+  <input type="button" value="Hide Car" (click)="showCars();" *ngIf="hideBtn">
+
+  <br>
+  <br>
+  <input type="text" [(ngModel)]="textBoxValue">
+  <input type="button" value="updateName" (click)="updateName();">
+
+  <br>
+  <br>
+  <input type="text" [(ngModel)]="name">this will bind with name
+  <br>
+  <br>
+  <input type="text" [(ngModel)]="carNames">
+  <input type="button" value="Add Car" (click)="addCar();">
+  
+
