@@ -1,0 +1,22 @@
+<p>
+  sample works!
+</p>
+<input type="button" value="get data from server"(click)="getData()" />
+<p>message from server {{msgFromServer.msg}}</p>
+
+<input type="button" value="get data from table"(click)="getDataFromTable()" />
+
+<table border="1">
+  <tr *ngFor="let ls of List[0];let i=index">
+    <td>{{ls.bookId}}</td>
+    <td>{{ls.bookName}}</td>
+    <td>{{ls.author}}</td>
+    <td>{{ls.publisher}}</td>
+  </tr>
+</table>
+
+<input type="tex" [(ngModel)]="BookId">
+<input type="tex" [(ngModel)]="BookName">
+<input type="tex" [(ngModel)]="author">
+<input type="tex" [(ngModel)]="publisher">
+<input type="button" value="insert Dummy Data"(click)="insertDataToTable()" />

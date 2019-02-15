@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">New EMployee {{empName}}</span>
+          <p>Welcome to ooty Nice to meet you :)</p>
+        </div>
+        <div class="card-action">
+          <a (click)="setCookie()">Set Cookie</a>
+          <a  (click)="getCookie()">Get Cookie</a>
+        </div>
+        <div class="card-action">
+          <a (click)="setLocalStroge()">Set Local Storage</a>
+          <a  (click)="getLocalStroge()">Get LocalStorage</a>
+        </div>
+        <div class="card-action">
+          <a (click)="setSessionStorage()">Set SessionStorage</a>
+          <a  (click)="getSessionStorage()">Get SessionStorage</a>
+        </div>
+          
+        <div class="card-action">
+          putting json array to a local storage
+          <input type="text" [(ngModel)]="dogName">
+          <input type="text" [(ngModel)]="dogType">
+          <a (click)="setSessionStorageDog()">Set SessionStorage</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
